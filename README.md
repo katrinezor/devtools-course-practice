@@ -15,27 +15,12 @@
 
  - Коммуникация: [Gitter chat][gitter]
  - [Таблица успеваемости][hall-of-fame]
+ - [Лабораторные работы][labs]
+   - [CDash Dashboard][cdash]
  - Теория
    - [Слайды в HTML][html]
    - [Исходники слайдов][theory]
    - [Контрольные вопросы][control-questions]
- - [Лабораторные работы][labs]
-   - [CDash Dashboard][cdash]
-
-## Code Coverage
-
-### Grid
-
-![](https://codecov.io/gh/UNN-VMK-Software/devtools-course-practice/branch/master/graphs/tree.svg)
-
-### Icicle
-
-![](https://codecov.io/gh/UNN-VMK-Software/devtools-course-practice/branch/master/graphs/icicle.svg)
-
-<!-- ### Sunburst
-
-![](https://codecov.io/gh/UNN-VMK-Software/devtools-course-practice/branch/master/graphs/sunburst.svg)
--->
 
 <!-- LINKS -->
 

@@ -1,0 +1,60 @@
+#############################################
+##### Testing
+#############################################
+
+set(prefix "${MODULE}")
+
+add_test(
+    NAME ${prefix}_can_Run
+    COMMAND ${APPLICATION}
+)
+set_tests_properties (${prefix}_can_Run PROPERTIES
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}Do_Print_Help_Without_Arguments
+    COMMAND ${APPLICATION}
+)
+set_tests_properties (${prefix}Do_Print_Help_Without_Arguments PROPERTIES
+    PASS_REGULAR_EXPRESSION "This is a huffman algoritm application\\..*"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}Is_Checking_Number_Of_Arguments_1
+    COMMAND ${APPLICATION} "encode" 
+)
+set_tests_properties (${prefix}Is_Checking_Number_Of_Arguments_1 PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR: Should be more than 1 arguments*"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}Is_Checking_Number_Of_Arguments_3
+    COMMAND ${APPLICATION} "encode" "asd" "1s"
+)
+set_tests_properties (${prefix}Is_Checking_Number_Of_Arguments_3 PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR: Should be less than 3 arguments*"
+LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}Can_Detect_Wrong_Comand_Format
+    COMMAND ${APPLICATION} "enscode" "it is my striiing"
+)
+set_tests_properties (${prefix}Can_Detect_Wrong_Comand_Format PROPERTIES
+    PASS_REGULAR_EXPRESSION "command is uncorrect"
+LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}Can_Calculate_Huffman_Cod
+    COMMAND ${APPLICATION} "encode" "it is my striiing"
+)
+set_tests_properties (${prefix}Can_Calculate_Huffman_Cod PROPERTIES
+    PASS_REGULAR_EXPRESSION "10010111100011110111000111001010110110101011000110"
+LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}Can_Encode_And_Decode
+    COMMAND ${APPLICATION} "encode_and_decode" "it is my striiing"
+)
+set_tests_properties (${prefix}Can_Encode_And_Decode PROPERTIES
+    PASS_REGULAR_EXPRESSION "it is my striiing"
+LABELS "${MODULE}")

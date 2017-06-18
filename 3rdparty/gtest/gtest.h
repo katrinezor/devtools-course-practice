@@ -51,7 +51,7 @@
 #ifndef GTEST_INCLUDE_GTEST_GTEST_H_
 #define GTEST_INCLUDE_GTEST_GTEST_H_
 
-// NOTE(Kornyakov): we need to disable some warnings
+// NOTE(Korniakov): we need to disable some warnings
 #include "patch_disable_warnings.h"
 
 #include <limits>

@@ -39,12 +39,12 @@
 лабораторной:
 
         $ git remote update
-        $ git checkout -b kornyakov-kirill-lab3 upstream/master
+        $ git checkout -b korniakov-kirill-lab3 upstream/master
 
 ### Выполнение лабораторной
 
 При выполнении лабораторной работы как обычно рекомендуется пользоваться
-проектом-примером, находящимся в директории `kornyakov-kirill-zcalc`.
+проектом-примером, находящимся в директории `complex-number`.
 
   1. Создайте директорию `application` в верхней директории своего проекта.
      Создайте cpp-файл с реализацией простейшего "Hello world" приложения на
