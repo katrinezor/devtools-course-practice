@@ -1,5 +1,5 @@
 set(target ${APPLICATION})
-set(APPLICATION_NAME "huffman_app")
+
 file(GLOB srcs "*.cpp")
 set_source_files_properties(${srcs} PROPERTIES
     LABELS "${MODULE};Application")
