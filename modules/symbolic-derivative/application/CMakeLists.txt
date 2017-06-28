@@ -6,7 +6,7 @@ set_source_files_properties(${srcs} PROPERTIES
 
 add_executable(${target} ${srcs})
 set_target_properties(${target} PROPERTIES
-    OUTPUT_NAME ${APPLICATION_NAME}
+    OUTPUT_NAME ${MODULE}
     LABELS "${MODULE};Application")
 
 target_link_libraries(${target} ${LIBRARY})
