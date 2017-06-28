@@ -16,4 +16,5 @@ private:
     std::string expression_;
 };
 
+
 #endif  // MODULES_SYMBOLIC_DERIVATIVE_INCLUDE_APPLICATION_H_
