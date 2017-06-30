@@ -3,13 +3,13 @@
 #ifndef MODULES_SYMBOLIC_DERIVATIVE_INCLUDE_APPLICATION_H_
 #define MODULES_SYMBOLIC_DERIVATIVE_INCLUDE_APPLICATION_H_
 
-#include <string.h>
+#include <string>
 
 class Application {
-public: 
+ public:
     Application();
     std::string operator()(int argc, const char** argv);
-private: 
+ private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_, expression_;
