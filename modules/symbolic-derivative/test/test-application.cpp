@@ -65,17 +65,17 @@ TEST_F(ApplicationTest, Can_Detect_Wrong_Expression_Format) {
 
 
 TEST_F(ApplicationTest, Can_Take_A_Simple_Derivative) {
-    vector<string> args = { "x", "2.0*x" };
+    vector<string> args = { "x", "2*x" };
 
     Act(args);
 
-    Assert("2.0");
+    Assert("2");
 }
 
 TEST_F(ApplicationTest, Can_Take_A_Complex_Derivative) {
-    vector<string> args = { "x", "2.0*x+x^3.0+sin(x)" };
+    vector<string> args = { "x", "2*x+x^3+sin(x)" };
 
     Act(args);
 
-    Assert("2.0 + cos(x)");
+    Assert("2+cos(x)");
 }
