@@ -77,5 +77,5 @@ TEST_F(ApplicationTest, Can_Take_A_Complex_Derivative) {
 
     Act(args);
 
-    Assert("2+cos(x)");
+    Assert("2+3*x^2+cos(x)");
 }
