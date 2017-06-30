@@ -55,10 +55,10 @@ TEST_F(ApplicationTest, Can_Detect_Wrong_Expression_Format) {
     Assert("ERROR. Wrong expression format.*");
 }
 
-TEST_F(ApplicationTest, Derivative_Of_X_Is_One) {
-    vector<string> args = { "x" };
+TEST_F(ApplicationTest, Can_Take_A_Simple_Derivative) {
+    vector<string> args = { "2.0*x" };
 
     Act(args);
 
-    Assert("1.0*");
+    Assert("2.0");
 }
