@@ -1,7 +1,6 @@
 // Copyright 2017 Zorina Ekaterina
 
 #include <gtest/gtest.h>
-
 #include <string>
 #include <vector>
 #include <algorithm>
