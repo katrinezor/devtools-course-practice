@@ -58,7 +58,7 @@ std::string Application::operator()(int argc, const char ** argv) {
         return message_;
     }
     try {
-        expression_ = parseExpression(argv[1]);        
+        expression_ += parseExpression(argv[1]);        
     }
     catch (std::string &str) {
         return str;

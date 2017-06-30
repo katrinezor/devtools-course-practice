@@ -40,25 +40,25 @@ private:
 };
 
 TEST_F(ApplicationTest, Print_Help_Without_Arguments) {
-    //vector<string> args = {};
+    vector<string> args = {};
 
-    //Act(args);
+    Act(args);
 
     Assert("This is a derivative application*");
 }
 
-/*TEST_F(ApplicationTest, Can_Detect_Wrong_Expression_Format) {
-    vector<string> args = {"2*x", "sin(x)"};
+TEST_F(ApplicationTest, Can_Detect_Wrong_Expression_Format) {
+    vector<string> args = {"2*x +", "פטû(x)"};
 
     Act(args);
 
     Assert("ERROR. Wrong expression format.*");
 }
 
-/*TEST_F(ApplicationTest, Derivative_Of_X_Is_One) {
+TEST_F(ApplicationTest, Derivative_Of_X_Is_One) {
     vector<string> args = { "x" };
 
     Act(args);
 
     Assert("1.0*");
-}*/
+}
