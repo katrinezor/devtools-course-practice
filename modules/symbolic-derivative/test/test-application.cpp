@@ -15,7 +15,7 @@ using std::vector;
 using std::string;
 
 class ApplicationTest : public ::testing::Test {
-protected:
+ protected:
     void Act(vector<string> args_) {
         vector<const char *> options;
 
@@ -34,7 +34,7 @@ protected:
         EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
     }
 
-private:
+ private:
     Application app_;
     string output_;
 };
@@ -56,7 +56,7 @@ TEST_F(ApplicationTest, Can_Detect_Wrong_Number_Of_Arguments) {
 }
 
 TEST_F(ApplicationTest, Can_Detect_Wrong_Expression_Format) {
-    vector<string> args = { "x", "פטû(x)" };
+    vector<string> args = { "x", "x%4" };
 
     Act(args);
 
