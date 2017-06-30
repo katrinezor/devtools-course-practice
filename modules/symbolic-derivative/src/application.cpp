@@ -34,8 +34,9 @@ void Application::help(const char * appname, const char * message) {
 
 string parseExpression(const char* arg) {
     for (unsigned int i = 0; i < strlen(arg); i++) {
-        if (!((arg[i] >= '0' && arg[i] <= '9') || arg[i] == '(' || arg[i] == ')' ||
-            arg[i] == '+' || arg[i] == '-' || arg[i] == '*' || arg[i] == '/' || arg[i] == '^' ||
+        if (!((arg[i] >= '0' && arg[i] <= '9') || arg[i] == '(' ||
+            arg[i] == ')' || arg[i] == '+' || arg[i] == '-' ||
+            arg[i] == '*' || arg[i] == '/' || arg[i] == '^' ||
             (arg[i] >= 'a' && arg[i] <='z')))
             throw std::string("ERROR. Wrong expression format.");
     }
@@ -60,7 +61,7 @@ std::string Application::operator()(int argc, const char ** argv) {
     }
     try {
         args.variable_ = parseExpression(argv[1]);
-        args.expression_ += parseExpression(argv[2]);        
+        args.expression_ += parseExpression(argv[2]);
     }
     catch (std::string &str) {
         return str;
