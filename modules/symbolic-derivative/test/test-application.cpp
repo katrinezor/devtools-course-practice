@@ -73,9 +73,9 @@ TEST_F(ApplicationTest, Can_Take_A_Simple_Derivative) {
 }
 
 TEST_F(ApplicationTest, Can_Take_A_Complex_Derivative) {
-    vector<string> args = { "x", "x^3+2*x+1" };
+    vector<string> args = { "x", "2*x+1*a+5" };
 
     Act(args);
 
-    Assert("3*x^2+2");
+    Assert("2");
 }
