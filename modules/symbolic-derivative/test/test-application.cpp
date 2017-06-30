@@ -47,16 +47,25 @@ TEST_F(ApplicationTest, Print_Help_Without_Arguments) {
     Assert("This is a derivative application*");
 }
 
+TEST_F(ApplicationTest, Can_Detect_Wrong_Number_Of_Arguments) {
+    vector<string> args = {"x", "cos(x)", "2*x"};
+
+    Act(args);
+
+    Assert("ERROR: Should be 2 arguments.*");
+}
+
 TEST_F(ApplicationTest, Can_Detect_Wrong_Expression_Format) {
-    vector<string> args = {"2*x +", "פטû(x)"};
+    vector<string> args = { "x", "פטû(x)" };
 
     Act(args);
 
     Assert("ERROR. Wrong expression format.*");
 }
 
+
 TEST_F(ApplicationTest, Can_Take_A_Simple_Derivative) {
-    vector<string> args = { "2.0*x" };
+    vector<string> args = { "x", "2.0*x" };
 
     Act(args);
 
@@ -64,9 +73,9 @@ TEST_F(ApplicationTest, Can_Take_A_Simple_Derivative) {
 }
 
 TEST_F(ApplicationTest, Can_Take_A_Complex_Derivative) {
-    vector<string> args = { "2.0*x + x^3 + sin(x)" };
+    vector<string> args = { "x", "2.0*x+x^3.0+sin(x)" };
 
     Act(args);
 
-    Assert("2.0 + 3*x^2 + cos(x)");
+    Assert("2.0 + cos(x)");
 }

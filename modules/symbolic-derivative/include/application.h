@@ -12,7 +12,11 @@ class Application {
  private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
-    std::string message_, expression_;
+    std::string message_;
+    typedef struct {
+        std::string expression_;
+        std::string variable_;
+    } Arguments;
 };
 
 

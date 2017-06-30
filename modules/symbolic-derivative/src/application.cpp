@@ -17,8 +17,7 @@ void Application::help(const char * appname, const char * message) {
         std::string(message) +
         "This is a derivative application.\n\n" +
         "Please type the expression in the following format:\n\n" +
-        "  $ " + appname + " <your expression>\n" +
-        "Use 'x' to designate the variable.\n" +
+        "  $ " + appname + "<your variable> <your expression>\n" +
         "All arguments should be double-precision numbers\n" +
         "You can enter expressions with the following operators:\n" +
         "    +    addition,\n" +
@@ -47,25 +46,30 @@ bool Application::validateNumberOfArguments(int argc, const char ** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
+    } else if (argc != 3) {
+        help(argv[0], "ERROR: Should be 2 arguments.\n\n");
+        return false;
     }
     return true;
 }
 
 std::string Application::operator()(int argc, const char ** argv) {
+    Arguments args;
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
     try {
-        expression_ += parseExpression(argv[1]);        
+        args.variable_ = parseExpression(argv[1]);
+        args.expression_ += parseExpression(argv[2]);        
     }
     catch (std::string &str) {
         return str;
     }
 
-    SymbolicFunction express;
+    SymbolicFunction express(args.expression_);
     std::ostringstream stream;
 
-    stream << express.Derivative(expression_).ToString();
+    stream << express.Derivative(args.variable_).ToString();
 
     message_ = stream.str();
     return message_;
