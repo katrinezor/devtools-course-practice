@@ -37,7 +37,7 @@ string parseExpression(const char* arg) {
     for (unsigned int i = 0; i < strlen(arg); i++) {
         if (!((arg[i] >= '0' && arg[i] <= '9') || arg[i] == '(' || arg[i] == ')' ||
             arg[i] == '+' || arg[i] == '-' || arg[i] == '*' || arg[i] == '/' || arg[i] == '^' ||
-            (arg[i] >= 'a' && arg[i] <='z'))
+            (arg[i] >= 'a' && arg[i] <='z')))
             throw std::string("ERROR. Wrong expression format.");
     }
     return arg;
